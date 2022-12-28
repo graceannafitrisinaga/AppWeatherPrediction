@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="Add Data"
+        android:id="@+id/addDataFragment"
+        android:icon="@drawable/ic_add"
+        />
+
+    <item
+        android:title="Show All"
+        android:id="@+id/showAllFragment"
+        android:icon="@drawable/ic_list"
+        />
+
+    <item
+        android:title="Weather"
+        android:id="@+id/weatherForecastFragment"
+        android:icon="@drawable/ic_cloud"/>
+
+</menu>

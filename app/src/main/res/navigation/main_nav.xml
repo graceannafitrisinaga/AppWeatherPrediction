@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/addDataFragment">
+
+    <fragment
+        android:name="com.graceannafitrisinaga.weatherprediction.ui.addDataScreen.AddDataFragment"
+        android:id="@+id/addDataFragment"
+        tools:layout="@layout/fragment_add_data"
+        android:label="fragment_add_data"
+        />
+
+    <fragment
+        android:name="com.graceannafitrisinaga.weatherprediction.ui.showAllScreen.ShowAllFragment"
+        android:id="@+id/showAllFragment"
+        tools:layout="@layout/fragment_show_all"
+        android:label="fragment_show_all"
+        />
+
+    <fragment
+        android:id="@+id/weatherForecastFragment"
+        android:name="com.graceannafitrisinaga.weatherprediction.ui.weather.WeatherForecastFragment"
+        android:label="fragment_weather_forecast"
+        tools:layout="@layout/fragment_weather_forecast" />
+
+</navigation>
