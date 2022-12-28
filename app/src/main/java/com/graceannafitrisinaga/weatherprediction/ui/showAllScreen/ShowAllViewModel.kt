@@ -15,12 +15,15 @@ import kotlinx.coroutines.launch
 class ShowAllViewModel: ViewModel() {
     private lateinit var repository: Repository
 
+    //fungsi untuk menampilkan data dari database menggunakan livedata jika online
     fun getAllData(context: Context): LiveData<List<DataItem>> {
+        //variabel untuk mengambil data dari repository jika offline
         val dao = DataDatabase.getDatabaseInstance(context).getDataDao()
         repository = Repository(dao)
         return repository.allData
     }
 
+    //fungsi untuk menghapus data dari repository dan database
     fun deleteData(context: Context, dataItem: DataItem){
         val dao = DataDatabase.getDatabaseInstance(context).getDataDao()
         repository = Repository(dao)

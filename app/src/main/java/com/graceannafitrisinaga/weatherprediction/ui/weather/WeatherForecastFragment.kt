@@ -59,14 +59,14 @@ class WeatherForecastFragment : Fragment() {
         viewModel = ViewModelProvider(this)[WeatherForecastViewModel::class.java]
 
 
-        // Initializing progress
+        // menginisiasi progress
         progress = ProgressDialog(this.requireContext())
         progress.setTitle("Loading")
         progress.setMessage("Wait while loading...")
         progress.setCancelable(false) // disable dismiss by tapping outside of the dialog
 
 
-        // Initialize location
+        // menginisiasi lokasi cuaca
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this.requireContext())
 
 
@@ -87,8 +87,7 @@ class WeatherForecastFragment : Fragment() {
         }else{
 
             if (isLocationEnabled(requireContext())){
-
-//                getCurrentLocationWeather()
+                //mengambil lokasi cuaca terbaru
                 getLocationWeather()
 
             }else{
@@ -99,7 +98,7 @@ class WeatherForecastFragment : Fragment() {
         }
 
 
-        // Initialize the reload data
+        // mereload data
         binding.reloadButton.setOnClickListener {
             if (NetworkUtils.isConnectedToInternet(this.requireContext()) && isLocationEnabled(requireContext())){
 
@@ -109,7 +108,7 @@ class WeatherForecastFragment : Fragment() {
 
             }else{
                 if (!isLocationEnabled(requireContext())){
-                    // notify user
+                    // notifikasi pengguna
                     requestLocation()
                     binding.locationNotEnabledWarning.visibility = View.VISIBLE
                 }else{
@@ -126,14 +125,14 @@ class WeatherForecastFragment : Fragment() {
 
 
 
-        // Initialize hourly weather
+        // menginisiasi cuaca per jam
         hourlyAdapter = HourlyWeatherAdapter(this.requireContext())
         binding.HourlyWeatherRecyclerView.layoutManager =
             LinearLayoutManager(this.requireContext(), LinearLayoutManager.HORIZONTAL, false)
         binding.HourlyWeatherRecyclerView.adapter = hourlyAdapter
 
 
-        // Initialize Daily Weather
+        // menginisiasi cuaca perhari
         dailyAdapter = DailyWeatherAdapter(this.requireContext())
         binding.dailyWeatherRecyclerView.layoutManager = LinearLayoutManager(this.requireContext())
         binding.dailyWeatherRecyclerView.adapter = dailyAdapter

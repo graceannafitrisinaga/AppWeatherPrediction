@@ -13,12 +13,16 @@ import retrofit2.Response
 
 class Repository(private val dataDao : DataDao) {
 
+    //menampilkan data menggunakan LiveData dengan menjalankan fungsi readAllData()
+    //yang ada pada file dataDao
     val allData : LiveData<List<DataItem>> = dataDao.readAllData()
 
+    //fungsi untuk menambahkan data pada DataItem menggunakan class dataDao
     suspend fun addData(data: DataItem){
         dataDao.addData(data)
     }
 
+    //fungsi untuk menghapus data pada DataItem menggunakan class dataDao
     suspend fun deleteData(data: DataItem){
         dataDao.deleteData(data)
     }

@@ -8,6 +8,7 @@ import retrofit2.http.Query
 
 interface WeatherApi {
 
+    //mengambil WeatherResponse dengan satu kali panggilan
     @GET("onecall")
     fun getWeatherData(@Query("lat") latitude : Double,
                        @Query("lon") longitude : Double,

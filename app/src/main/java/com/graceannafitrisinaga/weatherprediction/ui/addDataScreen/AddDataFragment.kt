@@ -17,7 +17,9 @@ class AddDataFragment : Fragment() {
         fun newInstance() = AddDataFragment()
     }
 
+    //menggunakan data binding pada fragment add data
     lateinit var binding: FragmentAddDataBinding
+    //menggunakan view model pada fragment add data
     private lateinit var viewModel: AddDataViewModel
 
     override fun onCreateView(
@@ -28,7 +30,7 @@ class AddDataFragment : Fragment() {
         viewModel = ViewModelProvider(this)[AddDataViewModel::class.java]
 
 
-        // On student data submit
+        // fungsi untuk tombol Submit tambah data
         binding.submitButton.setOnClickListener {
             val firstName = binding.firstNameEditText.text.toString()
             val lastName = binding.lastNameEditText.text.toString()
@@ -46,9 +48,6 @@ class AddDataFragment : Fragment() {
                 Toast.makeText(this.context, "Empty fields", Toast.LENGTH_SHORT).show()
             }
         }
-
-
-
         return binding.root
     }
 

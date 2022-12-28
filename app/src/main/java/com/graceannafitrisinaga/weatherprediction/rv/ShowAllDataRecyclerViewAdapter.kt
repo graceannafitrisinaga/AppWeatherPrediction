@@ -15,7 +15,6 @@ class ShowAllDataRecyclerViewAdapter(private val context: Context, private val v
 
     private val allData : ArrayList<DataItem> = ArrayList()
 
-
     inner class DataViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val name : TextView = itemView.findViewById(R.id.userNameTextView)
         val roll : TextView = itemView.findViewById(R.id.rollNumberTextView)

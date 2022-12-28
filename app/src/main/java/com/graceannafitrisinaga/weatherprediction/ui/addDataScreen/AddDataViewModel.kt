@@ -11,8 +11,10 @@ import kotlinx.coroutines.launch
 
 class AddDataViewModel : ViewModel() {
 
+    //menginisiasi objek repository menggunakan class Repository
     private lateinit var repository: Repository
 
+    //fungsi untuk menambahkan data kedalam database dan repository agar dapat diakses offline
     fun addData(context: Context, dataItem: DataItem){
         val dao = DataDatabase.getDatabaseInstance(context).getDataDao()
         repository = Repository(dao)

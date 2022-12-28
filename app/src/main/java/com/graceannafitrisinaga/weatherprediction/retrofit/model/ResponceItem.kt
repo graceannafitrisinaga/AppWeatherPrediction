@@ -1,5 +1,6 @@
 package com.graceannafitrisinaga.weatherprediction.retrofit.model
 
+//class untuk merepresentasikan objek data
 data class ResponceItem(
     val `data`: List<Data>,
     val page: Int,

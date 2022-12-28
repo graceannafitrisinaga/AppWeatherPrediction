@@ -1,5 +1,6 @@
 package com.graceannafitrisinaga.weatherprediction.retrofit.model
 
+//variabel objek data
 data class Data(
     val avatar: String,
     val email: String,

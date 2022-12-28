@@ -10,14 +10,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 class NetworkUtils {
 
     companion object{
-        //getting retrofit instance
-        fun getRetrofitInstance(): Retrofit {
-            val client = Retrofit.Builder()
-            client.baseUrl("https://reqres.in/")
-            client.addConverterFactory(GsonConverterFactory.create())
-            return client.build()
-        }
 
+        //mengambil data cuaca dari webservice untuk ditampilkan
         fun getWeatherRetrofitInstance(): Retrofit {
             val client = Retrofit.Builder()
             client.baseUrl("https://api.openweathermap.org/data/2.5/")
@@ -25,6 +19,7 @@ class NetworkUtils {
             return client.build()
         }
 
+        //fungsi untuk terhubung ke internet
         fun isConnectedToInternet(context: Context): Boolean {
             val connectivity = context.getSystemService(
                 Context.CONNECTIVITY_SERVICE
